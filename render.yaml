@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: sipus-ci4
+    runtime: docker
+    repo: https://github.com/Syaptiyan/sipus-ci4
+    branch: main
+    region: singapore
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: CI_ENVIRONMENT
+        value: production
+      - key: app.baseURL
+        value: https://sipus-ci4.onrender.com
+      - key: database.default.hostname
+        fromDatabase:
+          name: sipus-db
+          property: host
+      - key: database.default.database
+        fromDatabase:
+          name: sipus-db
+          property: database
+      - key: database.default.username
+        fromDatabase:
+          name: sipus-db
+          property: user
+      - key: database.default.password
+        fromDatabase:
+          name: sipus-db
+          property: password
+      - key: database.default.DBDriver
+        value: MySQLi
+      - key: database.default.port
+        value: 3306
+
+databases:
+  - name: sipus-db
+    plan: free
+    databaseName: sipus
+    user: sipus_user
+    region: singapore
