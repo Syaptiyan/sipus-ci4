@@ -10,14 +10,10 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache modules
 RUN a2enmod rewrite
 
-# Remove conflicting MPM modules and use prefork only
-RUN a2dismod mpm_event 2>/dev/null; \
-    a2dismod mpm_worker 2>/dev/null; \
-    a2enmod mpm_prefork 2>/dev/null; \
-    true
-
 COPY . /var/www/html/
 COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 WORKDIR /var/www/html
 
@@ -27,4 +23,4 @@ RUN mkdir -p writable/cache writable/logs writable/session writable/uploads \
     && chmod -R 777 writable
 
 EXPOSE 80
-CMD ["apache2-foreground"]
+ENTRYPOINT ["/entrypoint.sh"]
