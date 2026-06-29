@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - CI_ENVIRONMENT=development
+      - app.baseURL=http://localhost:8080
+      - database.default.hostname=db
+      - database.default.database=sipus
+      - database.default.username=root
+      - database.default.password=secret
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=sipus
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

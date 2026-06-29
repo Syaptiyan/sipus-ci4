@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "jaklitera";
+  default: true;
+  prefersdark: false;
+  --color-primary: #063a76;
+  --color-primary-content: #ffffff;
+  --color-secondary: #f85e38;
+  --color-secondary-content: #ffffff;
+  --color-accent: #005ac7;
+  --color-accent-content: #ffffff;
+  --color-neutral: #1f2937;
+  --color-neutral-content: #ffffff;
+  --color-base-100: #ffffff;
+  --color-base-200: #f8f9fb;
+  --color-base-300: #eef0f4;
+  --color-base-content: #1f2937;
+  --color-info: #3b82f6;
+  --color-info-content: #ffffff;
+  --color-success: #10b981;
+  --color-success-content: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-content: #ffffff;
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "jaklitera-dark";
+  default: false;
+  prefersdark: true;
+  --color-primary: #4a8eff;
+  --color-primary-content: #000000;
+  --color-secondary: #ff7b54;
+  --color-secondary-content: #000000;
+  --color-accent: #3b82f6;
+  --color-accent-content: #000000;
+  --color-neutral: #1e293b;
+  --color-neutral-content: #e2e8f0;
+  --color-base-100: #0f172a;
+  --color-base-200: #1e293b;
+  --color-base-300: #334155;
+  --color-base-content: #e2e8f0;
+  --color-info: #3b82f6;
+  --color-info-content: #000000;
+  --color-success: #10b981;
+  --color-success-content: #000000;
+  --color-warning: #f59e0b;
+  --color-warning-content: #000000;
+  --color-error: #ef4444;
+  --color-error-content: #000000;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+}
