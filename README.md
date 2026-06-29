@@ -178,19 +178,34 @@ docker-compose up -d
 
 <div align="center">
 
+### 🌐 Live Demo
+**[https://syaptiyan.github.io/sipus](https://syaptiyan.github.io/sipus)**
+
+Login: `admin` / `password`
+
+---
+
 ### Login Page
-![Login](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Login+Page)
+![Login Page](images/login.png)
 
 ### Dashboard
-![Dashboard](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Dashboard)
+![Dashboard](images/dashboard.png)
 
 ### Manajemen Buku
-![Buku](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Manajemen+Buku)
+![Manajemen Buku](images/buku.png)
+
+### Manajemen Anggota
+![Manajemen Anggota](images/anggota.png)
 
 ### Peminjaman
-![Peminjaman](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Peminjaman)
+![Peminjaman](images/peminjaman.png)
+
+### Mobile View
+![Mobile View](images/mobile.png)
 
 </div>
+
+> 📝 **Cara Screenshot:** Buka [demo](https://syaptiyan.github.io/sipus), login, lalu screenshot setiap halaman. Simpan di folder `images/` dengan nama sesuai di atas.
 
 ---
 
