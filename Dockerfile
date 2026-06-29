@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -7,21 +7,13 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo_mysql mbstring gd zip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Enable Apache modules
-RUN a2enmod rewrite
-
 COPY . /var/www/html/
-COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
-COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/public
 
 # Create writable directories and set permissions
-RUN mkdir -p writable/cache writable/logs writable/session writable/uploads \
-    && chown -R www-data:www-data writable \
-    && chmod -R 777 writable \
-    && chown -R www-data:www-data /var/www/html
+RUN mkdir -p ../writable/cache ../writable/logs ../writable/session ../writable/uploads \
+    && chmod -R 777 ../writable
 
 EXPOSE 80
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["php", "-S", "0.0.0.0:80"]
