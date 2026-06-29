@@ -20,7 +20,8 @@ WORKDIR /var/www/html
 # Create writable directories and set permissions
 RUN mkdir -p writable/cache writable/logs writable/session writable/uploads \
     && chown -R www-data:www-data writable \
-    && chmod -R 777 writable
+    && chmod -R 777 writable \
+    && chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
